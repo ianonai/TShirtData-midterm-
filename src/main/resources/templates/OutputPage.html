@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/main.css" th:href="@{css/main.css}">
+</head>
+<body>
+
+<h1>T-Shirt Details</h1>
+
+<p>
+    <span>Model Name: </span>
+    <span class="output" th:text="${envelope.name}">Name</span>
+</p>
+<p>
+    <span>Color: </span>
+    <span th:switch="${envelope.color}">
+        <span th:case="1">White</span>
+        <span th:case="2">Blue</span>
+        <span th:case="3">Yellow</span>
+    </span>
+</p>
+<p>
+    <span>Size: </span>
+    <span th:switch="${envelope.size}">
+        <span th:case="1">Small</span>
+        <span th:case="2">Medium</span>
+        <span th:case="3">Large</span>
+        <span th:case="4">Extra Large</span>
+    </span>
+</p>
+
+
+<p>
+    <a href="InputPage.html" th:href="@{input_page}">Back</a>
+</p>
+
+<div id="footer">
+    <hr>
+    <div class="row">
+            <span class="footer-col">
+                <h2>Sheridan College, Iano Francisco</h2>
+            </span>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+h1{
+    color:darkgreen;
+    font-size: xx-large;
+}
+h2{
+    color:seagreen;
+}
+body{
+    text-align:center;
+    background-color: #E7F6E8;
+    font-family: "Verdana";
+}
+
+input[type='radio'] {
+    transform: scale(1.6);
+}
+
+#footer{
+    position: fixed;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+}

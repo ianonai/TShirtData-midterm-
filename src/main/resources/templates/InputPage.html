@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/main.css" th:href="@{css/main.css}">
+</head>
+<body>
+
+<h1>Order a T-Shirt</h1>
+
+<form action="OutputPage.html" th:action="@{Process}" th:object="${envelope}">
+
+    <p>
+        <label>Model Name: </label>
+        <input type="text" th:field="*{name}">
+    </p>
+    <p>
+        <label>Color: </label>
+        <select th:field="*{color}">
+            <option  th:value="1">White</option>
+            <option  th:value="2">Blue</option>
+            <option  th:value="3">Yellow</option>
+        </select>
+    </p>
+    <p>
+        <label><input type="radio" th:field="*{size}" th:value="1"> S </label>
+        <label><input type="radio" th:field="*{size}" th:value="2"> M </label>
+        <label><input type="radio" th:field="*{size}" th:value="3"> L </label>
+        <label><input type="radio" th:field="*{size}" th:value="3"> XL </label>
+    </p>
+
+
+
+    <p>
+        <input type="submit" value="Submit">
+    </p>
+    <div th:if="${#fields.hasErrors('*')}">
+        <ul>
+            <li class="error" th:each="e: ${#fields.errors('*')}" th:text="${e}">Input Error</li>
+        </ul>
+    </div>
+</form>
+
+    <div id="footer">
+        <hr>
+        <div class="row">
+            <span class="footer-col">
+                <h2>Sheridan College, Iano Francisco</h2>
+            </span>
+        </div>
+    </div>
+
+
+</body>
+</html>
